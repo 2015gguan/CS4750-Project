@@ -182,7 +182,7 @@ li#callbacks1_s3 {
 	min-height:300px;
 }
 .wthree-different-dot {
-    background: url(../images/dott.png)repeat 0px 0px;
+    /*background: url(../images/dott.png)repeat 0px 0px;*/
     background-size: 2px;
     -webkit-background-size: 2px;
     -moz-background-size: 2px;
@@ -192,7 +192,7 @@ li#callbacks1_s3 {
 }
 .wthree-different-dot1 {
 	padding: 5em 0;
-    background: url(../images/dott.png)repeat 0px 0px;
+    /*background: url(../images/dott.png)repeat 0px 0px;*/
     background-size: 2px;
     -webkit-background-size: 2px;
     -moz-background-size: 2px;
@@ -491,7 +491,6 @@ li#callbacks1_s3 {
 
 /*-- stats --*/
 .stats {
-    /*background: url(../images/b3.jpg) no-repeat fixed;*/
     background-size: cover;
 }
 
