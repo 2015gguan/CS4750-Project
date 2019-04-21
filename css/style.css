@@ -491,7 +491,7 @@ li#callbacks1_s3 {
 
 /*-- stats --*/
 .stats {
-    background: url(../images/b3.jpg) no-repeat fixed;
+    /*background: url(../images/b3.jpg) no-repeat fixed;*/
     background-size: cover;
 }
 
