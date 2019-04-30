@@ -85,69 +85,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<h3 class="heading" style="text-align:center;"><span>Coaches</span></h3>
 		<div id="verticalTab">
 			<ul class="resp-tabs-list">
+
+<?php
+
+$servername = "mysql.cs.virginia.edu";
+$username = "gzg4zf";
+$password = "pizzapizza";
+$dbname = "gzg4zf";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * from Coach INNER JOIN Sports ON Coach.Sport = Sports.name ORDER BY Coach.First_name";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+echo "
+
 				<li>
-					<div class="col-md-4 tab1">
-						<img src="images/s1.jpg" alt="" />
+					<div class='col-md-4 tab1'>
+						<img src='".$row["ProfilePicUrl"]."' alt='' />
 					</div>
-					<div class="col-md-8 tab1">
-						<h3>Tony Bennet</h3>
-						<h4>Men's Basketball</h4>
+					<div class='col-md-8 tab1'>
+						<h3>".$row["First_name"]." ".$row["Last_name"]."</h3>
+						<h4>".$row["dispname"]."</h4>
 					</div>
-					<div class="clearfix"></div>
+					<div class='clearfix'></div>
 				</li>
-				<li>
-					<div class="col-md-4 tab1">
-						<img src="images/s4.jpg" alt="" />
-					</div>
-					<div class="col-md-8 tab1">
-						<h3>Bronco Mendenhall</h3>
-						<h4>Men's Football</h4>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="col-md-4 tab1">
-						<img src="images/s2.jpg" alt="" />
-					</div>
-					<div class="col-md-8 tab1">
-						<h3>Brian O'Connor</h3>
-						<h4>Men's Baseball</h4>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-				<li>
-					<div class="col-md-4 tab1">
-						<img src="images/s3.jpg" alt="" />
-					</div>
-					<div class="col-md-8 tab1">
-						<h3>George Gelnovatch</h3>
-						<h4>Men's Soccer</h4>
-					</div>
-					<div class="clearfix"></div>
-				</li>
+";
+
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+         ?>
 			</ul>
 			<div class="resp-tabs-container">
 
+
 <?php 
-echo "				<div>";
-?>
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * from Coach INNER JOIN Sports ON Coach.Sport = Sports.name ORDER BY Coach.First_name";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+echo "
+			<div>
+
 					<div class='col-md-7 tabs-right1'>
-						<h3>Tony Bennett</h3>
-						<h4>Coach : Men's Basketball</h4>
+						<h3>".$row["First_name"]." ".$row["Last_name"]."</h3>
+						<h4>Coach: ".$row["dispname"]."</h4>
 						<ul class='social'>
-							<li><a  href='#'><i class='fa fa-wikipedia-w'></i></a></li>
-							<li><a href='#'><i class='fa fa-dribbble'></i></a></li>
+							<li><a  href='".$row["WikiUrl"]."'><i class='fa fa-wikipedia-w'></i></a></li>
+							<li><a href='".$row["LinkUrl"]."'><i class='fa fa-dribbble'></i></a></li>
 						</ul>
-							<p>Anthony Guy Bennett is an American basketball coach and former player. He has been the head men's basketball coach at the University of Virginia since March 31, 2009.</p>
+							<p>".$row["Description"]."</p>
 						
 					</div>	
 					<div class='col-md-5 tabs-right2'>
-							<img src='images/tony-bennett.jpg' alt='' />
+							<img src='".$row["PictureUrl"]."' alt='' />
 					</div>
 					<div class='clearfix'></div>
-				</div>
+				</div>"; 
 
-
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+         ?>
 
 
 				<div>
