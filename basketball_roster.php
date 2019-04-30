@@ -187,51 +187,7 @@ $.ajax({
 				<div class="col">
 					<div class="results_container d-flex flex-row align-items-start justify-content-start">
 						<!--AJAX AND TABLE GO HERE!!-->
-						<div class="result text-right">
-							<div class="result_content d-flex flex-row align-items-end justify-content-start">
-								<div class="text-center">
-									<div class="result_team"><a href="roster1.php">Roster</a></div>
-								</div>
-							</div>
-						</div>
-						<div class="result text-left">
-							<div class="result_content d-flex flex-row align-items-end justify-content-start">
-								<div class="text-center">
-									<div class="result_team">Tigers Club</div>
-								</div>
-							</div>
-						</div>
 
-
-<div id="wholething">
-<h1 style="color:#232D4B;" id="head">Rosters</h1>
-
-<section class="stats" id="stats">
-	<div class="wthree-different-dot1">
-		<div class="container">
-			<h3 class="heading"><span><a href="home.html">Home</a></span></h3>
-
-<select name="Sport" id="sport">
-  <option value="Basketball">Basketball</option>
-  <option value="Soccer">Soccer</option>
-  <option value="Football">Football</option>
-  <option value="Baseball">Baseball</option>
-</select>
-
-<select name="Year" id="year">
-  <option value="2017">2017</option>
-  <option value="2018">2018</option>
-  <option value="2019">2019</option>
-</select>
-
-			
-			<input class="xlarge" id="LastNinput" type="search" size="30" placeholder="Last Name Contains"/>
-			<div style="text-align:center;" id="LastNresult">Search Result</div>
-		</div>
-	</div>
-</section>
-
-</div>
 
 					</div>
 				</div>
