@@ -1,24 +1,35 @@
 <?php
-        require "dbutil.php";
-        $db = DbUtil::loginConnection();
+	$servername = "mysql.cs.virginia.edu";
+	$username = "gzg4zf";
+	$password = "pizzapizza";
+	$dbname = "gzg4zf";
 
-        $stmt = $db->stmt_init();
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
 
-        if($stmt->prepare("select * from Player where Last_name like ?") or die(mysqli_error($db))) {
-                $searchString = '%' . $_GET['searchLastName'] . '%';
-                $stmt->bind_param(s, $searchString);
-                $stmt->execute();
-                $stmt->bind_result($First_name, $Last_name, $Position);
+}
+
+$sql = "SELECT * from Player where Last_name like '%".$_GET['searchLastName']."%'";
+
+echo $sql;
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
                 echo "<table border=1><th>First Name</th><th>Last Name</th><th>Position</th>\n";
-                while($stmt->fetch()) {
-                        echo "<tr><td>$First_name</td><td>$Last_name</td><td>$Position</td></tr>";
-                }
-                echo "</table>";
+    while($row = $result->fetch_assoc()) {
 
-                $stmt->close();
-        }
+               echo "<tr><td>".$row["First_name"]."</td><td>".$row["Last_name"]."</td><td>".$row["Position"]."</td></tr>";
+}
 
-        $db->close();
+} else {
+    echo "0 results";
+}
+                echo "</table>"; 
 
-
-?>
+$conn->close();
+         ?>

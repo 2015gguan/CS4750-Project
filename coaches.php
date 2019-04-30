@@ -268,31 +268,14 @@ $conn->close();
 <!-- footer -->
 <section class="footer">
 	<div class="container">
-		<div class="agileinfo-grids">
-			<div class="agile-grid-left agile-grid-right">
-				<h4>Keep Updated On Social Media</h4>
-				<div class="social">
-					<ul>
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-rss"></i></a></li>
-						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="#"><i class="fa fa-vk"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
 		<div class="agile-nav">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="#about" class="scroll">About</a></li>
-				<li><a href="#classes" class="scroll">Classes</a></li>
-				<li><a href="#coaches" class="scroll">Our Coaches</a></li>
-				<li><a href="#testimonials" class="scroll">Testimonials</a></li>
-				<li><a href="#pricing" class="scroll">Pricing Plans</a></li>
-				<li><a href="#contact" class="scroll">Contact us</a></li>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="#about" class="scroll">Basketball Rosters</a></li>
+				<li><a href="#about" class="scroll">Football Rosters</a></li>
+				<li><a href="#about" class="scroll">Soccer Rosters</a></li>
+				<li><a href="#about" class="scroll">Baseball Rosters</a></li>
+				<li><a href="#contact" class="scroll">Stats</a></li>
 			</ul>
 		</div>
 	</div>
