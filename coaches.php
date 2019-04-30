@@ -173,70 +173,6 @@ $conn->close();
          ?>
 
 
-				<div>
-					<div class="col-md-7 tabs-right1">
-						<h3>Bronco Mendenhall</h3>
-						<h4>Coach : Men's Football</h4>
-						<ul class="social">
-							<li><a  href="#"><i class="fa fa-wikipedia-w"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-						</ul>
-						
-							<p>Marc Bronco Clay Mendenhall is the head coach of the Virginia Cavaliers football team at the University of Virginia.</p>
-						
-					</div>	
-					<div class="col-md-5 tabs-right2">
-							<img src="images/bronco.jpg" alt="" />
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div>
-					<div class="col-md-7 tabs-right1">
-						<h3>Brian O'Connor</h3>
-						<h4>Coach : Men's Baseball</h4>
-						<ul class="social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a  href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						</ul>
-						<div class="tab-bottom">
-							<p><i class="fa fa-map-marker" aria-hidden="true"></i>4615 50 Ave, Lloydminster, Canada</p>
-							<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:mail@example.com">bpo8n@virginia.edu</a></p>
-							<p><i class="fa fa-phone" aria-hidden="true"></i>+1 (434) 982-4932</p>
-						</div>
-						
-							<p>Brian Patrick O'Connor is the head baseball coach of the Virginia Cavaliers. Previously serving as an Associate Head Coach at Notre Dame, he was hired on July 8, 2003, to replace the retiring Dennis Womack.</p>
-						
-					</div>	
-					<div class="col-md-5 tabs-right2">
-							<img src="images/brian-oconnor.jpg" alt="" />
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div>
-					<div class="col-md-7 tabs-right1">
-						<h3>mary lindey</h3>
-						<h4>Coach : Fit club trainer</h4>
-						<ul class="social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a  href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						</ul>
-						<div class="tab-bottom">
-							<p><i class="fa fa-map-marker" aria-hidden="true"></i>4615 50 Ave, Lloydminster, Canada</p>
-							<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:mail@example.com">mail@example.com</a></p>
-							<p><i class="fa fa-phone" aria-hidden="true"></i>+105 967 254 7834</p>
-						</div>
-						
-							<p>Lorem ipsum dolor sit amet, consectetur adipisthn cingelit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit dolor sit amet.</p>
-						
-					</div>	
-					<div class="col-md-5 tabs-right2">
-							<img src="images/s33.jpg" alt="" />
-					</div>
-					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
@@ -271,10 +207,10 @@ $conn->close();
 		<div class="agile-nav">
 			<ul>
 				<li><a href="home.html">Home</a></li>
-				<li><a href="#about" class="scroll">Basketball Rosters</a></li>
-				<li><a href="#about" class="scroll">Football Rosters</a></li>
-				<li><a href="#about" class="scroll">Soccer Rosters</a></li>
-				<li><a href="#about" class="scroll">Baseball Rosters</a></li>
+				<li><a href="roster.php?Sport=Basketball&Year=2018" class="scroll">Basketball Rosters</a></li>
+				<li><a href="roster.php?Sport=Football&Year=2018" class="scroll">Football Rosters</a></li>
+				<li><a href="roster.php?Sport=Soccer&Year=2018" class="scroll">Soccer Rosters</a></li>
+				<li><a href="roster.php?Sport=Baseball&Year=2019" class="scroll">Baseball Rosters</a></li>
 				<li><a href="#contact" class="scroll">Stats</a></li>
 			</ul>
 		</div>

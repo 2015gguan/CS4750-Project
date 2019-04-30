@@ -7,6 +7,33 @@
 
 	<script>
 	$(document).ready(function() {
+
+		<?php 
+			
+		if(isset($_GET['Year']) && !empty($_GET['Year']))
+		{
+			echo "$(\"#year\").val(".$_GET['Year'].");\n";
+
+		}
+
+		if(isset($_GET['Sport']) && !empty($_GET['Sport']))
+		{
+
+			echo "$(\"#sport\").val(\"".$_GET['Sport']."\");\n";
+		}
+
+
+		?>
+$.ajax({
+				url: 'searchPlayers.php', 
+				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
+				success: function(data){
+					$('#LastNresult').html(data);	
+				
+				}
+			});
+
+
 		$( "#LastNinput, #year, #sport" ).change(function() {
 
 			$.ajax({
@@ -27,12 +54,12 @@
 <body>
 
 <div id="wholething">
-<h1 id="head">Rosters</h1>
+<h1 style="color:#232D4B;" id="head">Rosters</h1>
 
 <section class="stats" id="stats">
 	<div class="wthree-different-dot1">
 		<div class="container">
-			<h3 class="heading"><span>UVA Basketball</span></h3>
+			<h3 class="heading"><span><a href="home.html">Home</a></span></h3>
 
 <select name="Sport" id="sport">
   <option value="Basketball">Basketball</option>
@@ -49,7 +76,7 @@
 
 			
 			<input class="xlarge" id="LastNinput" type="search" size="30" placeholder="Last Name Contains"/>
-			<div id="LastNresult">Search Result</div>
+			<div style="text-align:center;" id="LastNresult">Search Result</div>
 		</div>
 	</div>
 </section>
