@@ -23,7 +23,6 @@ else
 
 $sql = "SELECT * from Player INNER JOIN PlayerSport on Player.Player_id = PlayerSport.Player_id WHERE Sport='".$_GET['Sport']."' AND Year=".$_GET['Year'];
 }
-//echo $sql;
 
 
 $result = $conn->query($sql);

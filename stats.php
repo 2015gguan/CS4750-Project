@@ -26,7 +26,7 @@
 		?>
 $.ajax({
 				url: 'statsPlayers.php', 
-				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
+				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").val(), Year: $("#year :selected").text()},
 				success: function(data){
 					$('#LastNresult').html(data);	
 				
@@ -37,8 +37,8 @@ $.ajax({
 		$( "#LastNinput, #year, #sport" ).change(function() {
 
 			$.ajax({
-				url: 'searchPlayers.php', 
-				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
+				url: 'statsPlayers.php', 
+				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").val(), Year: $("#year :selected").text()},
 				success: function(data){
 					$('#LastNresult').html(data);	
 				
@@ -66,6 +66,8 @@ $.ajax({
   <option value="Soccer">Soccer</option>
   <option value="Football">Football</option>
   <option value="Baseball">Baseball</option>
+  <option value="wBasketball">Women's Basketball</option>
+  <option value="wSoccer">Women's Soccer</option>
 </select>
 
 <select name="Year" id="year">
@@ -77,9 +79,6 @@ $.ajax({
 			
 			<input class="xlarge" id="LastNinput" type="search" size="30" placeholder="Last Name Contains"/>
 			<div style="text-align:center;" id="LastNresult">Search Result</div>
-
-			<input type="button" onclick="location.href='rosterInsert.php';" value="Insert Player" />
-
 		</div>
 	</div>
 </section>

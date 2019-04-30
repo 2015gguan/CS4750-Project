@@ -36,6 +36,12 @@
   <option value="Soccer">Soccer</option>
 </select> <br> </br>
 			 Year: 
+<select name="year">
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2018">2018</option>
+  <option value="2019">2019</option>
+</select> <br> </br>
 
 		  <input type="submit" value="Insert">
 

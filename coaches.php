@@ -207,10 +207,10 @@ $conn->close();
 		<div class="agile-nav">
 			<ul>
 				<li><a href="home.html">Home</a></li>
-				<li><a href="roster.php?Sport=Basketball&Year=2018" class="scroll">Basketball Rosters</a></li>
-				<li><a href="roster.php?Sport=Football&Year=2018" class="scroll">Football Rosters</a></li>
-				<li><a href="roster.php?Sport=Soccer&Year=2018" class="scroll">Soccer Rosters</a></li>
-				<li><a href="roster.php?Sport=Baseball&Year=2019" class="scroll">Baseball Rosters</a></li>
+				<li><a href="roster.php?Sport=Basketball&Year=2018">Basketball Rosters</a></li>
+				<li><a href="roster.php?Sport=Football&Year=2018">Football Rosters</a></li>
+				<li><a href="roster.php?Sport=Soccer&Year=2018">Soccer Rosters</a></li>
+				<li><a href="roster.php?Sport=Baseball&Year=2019">Baseball Rosters</a></li>
 				<li><a href="#contact" class="scroll">Stats</a></li>
 			</ul>
 		</div>
