@@ -100,7 +100,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * from Coach INNER JOIN Sports ON Coach.Sport = Sports.name ORDER BY Coach.First_name";
+$sql = "SELECT * from Coach INNER JOIN Sports ON Coach.Sport = Sports.name ORDER BY Sports.dispname";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -139,7 +139,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * from Coach INNER JOIN Sports ON Coach.Sport = Sports.name ORDER BY Coach.First_name";
+$sql = "SELECT * from Coach INNER JOIN Sports ON Coach.Sport = Sports.name ORDER BY Sports.dispname";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -207,11 +207,8 @@ $conn->close();
 		<div class="agile-nav">
 			<ul>
 				<li><a href="home.html">Home</a></li>
-				<li><a href="roster.php?Sport=Basketball&Year=2018">Basketball Rosters</a></li>
-				<li><a href="roster.php?Sport=Football&Year=2018">Football Rosters</a></li>
-				<li><a href="roster.php?Sport=Soccer&Year=2018">Soccer Rosters</a></li>
-				<li><a href="roster.php?Sport=Baseball&Year=2019">Baseball Rosters</a></li>
-				<li><a href="#contact" class="scroll">Stats</a></li>
+				<li><a href="roster.php">Rosters</a></li>
+				<li><a href="stats.php">Stats</a></li>
 			</ul>
 		</div>
 	</div>

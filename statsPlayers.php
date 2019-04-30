@@ -84,7 +84,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-                echo "<table align='center' style='margin-top:20px' border=1><th>First Name</th><th>Last Name</th><th>Position</th>";
+                echo "<div style='overflow-x:auto;'> <table id='customers' align='center' style='margin-top:20px' border=1><th>First Name</th><th>Last Name</th><th>Position</th>";
 
 		if($_GET['Sport'] == "Football")
 {
@@ -125,13 +125,13 @@ echo "<td>".$row["Points_per_game"]."</td><td>".$row["Rebounds_per_game"]."</td>
 		}
 		else if($_GET['Sport'] == "Baseball")
 		{
-echo "<td>".$row["Runs"]."</td><td>".$row["Home_runs"]."</td><td>".$row["Runs_batted_in"]."</td><td>".$row["ERA"]."</td>";
+echo "<td>".$row["Runs"]."</td><td>".$row["Hits"]."</td><td>".$row["Home_runs"]."</td><td>".$row["Runs_batted_in"]."</td><td>".$row["ERA"]."</td>";
 		}
 
 }
 } else {
     echo "0 results";
 }		echo "</tr>";
-                echo "</table>"; 
+                echo "</table> </div>"; 
 $conn->close();
          ?>

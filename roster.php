@@ -35,6 +35,13 @@ $.ajax({
 
 
 		$( "#LastNinput, #year, #sport" ).change(function() {
+			$('input#hideYear').val($('#year').val());
+			$('input#hideSport').val($('#sport').val());
+			$('input#hideLName').val($('#LastNinput').val());
+
+		});
+
+		$( "#LastNinput, #year, #sport" ).change(function() {
 
 			$.ajax({
 				url: 'searchPlayers.php', 
@@ -83,6 +90,13 @@ $.ajax({
 		</br>
 
 			<input type="button" onclick="location.href='rosterInsert.php';" value="Insert Player" />
+<form action="exportRoster.php" method="get">
+			<input type="hidden" id="hideSport" name="Sport" value="<?php echo $_GET["Sport"]; ?>" />
+			<input type="hidden" id="hideYear" name="Year" value="<?php echo $_GET["Year"];?>" />
+			<input type="hidden" id="hideLName" name="searchLastName" value="<?php echo $_GET["searchLastName"];?>" />
+		
+			<input type="submit" id="exportButton" value="Export Roster" />
+</form>
 
 		</div>
 	</div>

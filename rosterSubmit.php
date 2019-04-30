@@ -37,13 +37,13 @@ if ($conn->query($sql) === TRUE)
       $sql1 = "Select Player_id FROM Player WHERE Last_name='".$_POST['lastname']."' AND First_name='".$_POST['firstname']."' AND Year=".$_POST['year']." AND Position='".$_POST['position']."';";
 	 $result1 = $conn->query($sql1);
 
-	echo $sql1;
+	//echo $sql1;
 	 $row1 = $result1->fetch_assoc();
 
 	print_r($row1);
 
 	 $sql2 = "Insert into PlayerSport (Player_id, Sport) VALUES ('".$row1["Player_id"]."','".$_POST['sport']."');";
-	 echo $sql2;
+	// echo $sql2;
 	if ($conn->query($sql2) === TRUE) 
 	{
 
