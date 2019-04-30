@@ -13,9 +13,28 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script> 
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script type = "text/javascript" src = "script.js" ></script>
+<script>
+$(document).ready(function() {
+	$( "#LastNinput, #year, #sport" ).change(function() {
+
+		$.ajax({
+			url: 'searchPlayers.php', 
+			data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
+			success: function(data){
+				$('#LastNresult').html(data);	
+			
+			}
+		});
+	});
+	
+});
+</script>
 </head>
 <body>
-
 <div class="super_container">
 
 	<!-- Home -->
@@ -140,12 +159,32 @@
 				<div class="col">
 					<div class="results_container d-flex flex-row align-items-start justify-content-start">
 						<!--AJAX AND TABLE GO HERE!!-->
+						<div class="result text-right">
+							<div class="result_content d-flex flex-row align-items-end justify-content-start">
+								<div class="text-center">
+									<div class="result_team"><a href="roster1.php">Roster</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="result text-left">
+							<div class="result_content d-flex flex-row align-items-end justify-content-start">
+								<div class="text-center">
+									<div class="result_team">Tigers Club</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
+<div class="super_container">
 	<!-- Player of the month -->
 
 	<div class="player">
