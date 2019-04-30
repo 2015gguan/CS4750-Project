@@ -5,78 +5,63 @@
 	<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
       <script type = "text/javascript" src = "script.js" ></script>
 
-	<script>
-	$(document).ready(function() {
-
-		<?php 
-			
-		if(isset($_GET['Year']) && !empty($_GET['Year']))
-		{
-			echo "$(\"#year\").val(".$_GET['Year'].");\n";
-
-		}
-
-		if(isset($_GET['Sport']) && !empty($_GET['Sport']))
-		{
-
-			echo "$(\"#sport\").val(\"".$_GET['Sport']."\");\n";
-		}
-
-
-		?>
-$.ajax({
-				url: 'searchPlayers.php', 
-				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
-				success: function(data){
-					$('#LastNresult').html(data);	
-				
-				}
-			});
-
-
-		$( "#LastNinput, #year, #sport" ).change(function() {
-
-			$.ajax({
-				url: 'searchPlayers.php', 
-				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
-				success: function(data){
-					$('#LastNresult').html(data);	
-				
-				}
-			});
-		});
-		
-	});
-	</script>
 </head>
 
 
 <body>
 
 <div id="wholething">
-<h1 style="color:#232D4B;" id="head">Rosters</h1>
+<h1 style="color:#232D4B;" id="head">Update Rosters</h1>
 
 <section class="stats" id="stats">
 	<div class="wthree-different-dot1">
 		<div class="container">
 			<h3 class="heading"><span><a href="home.html">Home</a></span></h3>
 
-<select name="Sport" id="sport">
-  <option value="Basketball">Basketball</option>
-  <option value="Soccer">Soccer</option>
-  <option value="Football">Football</option>
-  <option value="Baseball">Baseball</option>
-</select>
+			<?php
 
-<select name="Year" id="year">
-  <option value="2017">2017</option>
-  <option value="2018">2018</option>
-  <option value="2019">2019</option>
-</select>
+			$servername = "mysql.cs.virginia.edu";
+			$username = "gzg4zf";
+			$password = "pizzapizza";
+			$dbname = "gzg4zf";
 
-			
-			<input class="xlarge" id="LastNinput" type="search" size="30" placeholder="Last Name Contains"/>
-			<div style="text-align:center;" id="LastNresult">Search Result</div>
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			}
+
+ $sql = "SELECT * from Player WHERE Player_id = '".$_GET['playerid']."'";
+ $result = $conn->query($sql);
+ $row = $result->fetch_assoc();
+
+
+
+?>
+
+			<form action="rosterSubmit.php" method="POST">
+
+			 ID: <?php echo $row["Player_id"]?> <br><br>
+
+    <input type="hidden" name="id" value="<?php echo $row["Player_id"]; ?>">  
+
+			 First Name: 
+	  <input type="text" name="firstname" value="<?php echo $row["First_name"]?>"><br><br>
+			 Last Name: 
+	  <input type="text" name="lastname" value="<?php echo $row["Last_name"]?>"><br><br>
+			 Position: 
+	  <input type="text" name="position" value="<?php echo $row["Position"]?>"><br><br>
+
+		  <input type="submit" value="Submit">
+
+			<?php
+			$conn->close();	
+
+			?>
+
+			</form>
+
 		</div>
 	</div>
 </section>
