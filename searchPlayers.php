@@ -30,10 +30,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-                echo "<table align='center' style='margin-top:20px' border=1><th>First Name</th><th>Last Name</th><th>Position</th>\n";
+                echo "<table align='center' style='margin-top:20px' border=1><th>First Name</th><th>Last Name</th><th>Position</th><th>Update?</th>\n";
     while($row = $result->fetch_assoc()) {
 
-               echo "<tr><td>".$row["First_name"]."</td><td>".$row["Last_name"]."</td><td>".$row["Position"]."</td></tr>";
+               echo "<tr data-user-id='".$row["Player_id"]."'><td>".$row["First_name"]."</td><td>".$row["Last_name"]."</td><td>".$row["Position"]."</td><td><a href='rosterUpdate.php?playerid=".$row["Player_id"]."'>Update<a/></td></tr>";
 }
 
 } else {
