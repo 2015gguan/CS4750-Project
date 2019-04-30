@@ -11,9 +11,18 @@
 	    die("Connection failed: " . $conn->connect_error);
 
 }
+if(isset($_GET['searchLastName']) && !empty($_GET['searchLastName'])
+{
 
-$sql = "SELECT * from Player where Last_name like '%".$_GET['searchLastName']."%'";
+ $sql = "SELECT * from Player INNER JOIN PlayerSport on Player.Player_id = PlayerSport.Player_id WHERE Sport='".$_GET['Sport']."' AND Year=".$_GET['Year']." AND Last_name LIKE '%".$_GET['searchLastName']."%'":
 
+}
+
+else
+{
+
+$sql = "SELECT * from Player INNER JOIN PlayerSport on Player.Player_id = PlayerSport.Player_id WHERE Sport='".$_GET['Sport']."' AND Year=".$_GET['Year'];
+}
 echo $sql;
 
 $result = $conn->query($sql);
