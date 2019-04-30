@@ -25,7 +25,7 @@
 
 		?>
 $.ajax({
-				url: 'searchPlayers.php', 
+				url: 'statsPlayers.php', 
 				data: {searchLastName: $( "#LastNinput" ).val(), Sport: $("#sport :selected").text(), Year: $("#year :selected").text()},
 				success: function(data){
 					$('#LastNresult').html(data);	
@@ -54,7 +54,7 @@ $.ajax({
 <body>
 
 <div id="wholething">
-<h1 style="color:#232D4B;" id="head">Rosters</h1>
+<h1 style="color:#232D4B;" id="head">Statistics</h1>
 
 <section class="stats" id="stats">
 	<div class="wthree-different-dot1">
