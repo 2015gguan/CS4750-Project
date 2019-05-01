@@ -76,7 +76,6 @@ $sql = "SELECT * from Player INNER JOIN PlayerSport on Player.Player_id = Player
 
 $sql = $sql." WHERE Sport='".$_GET['Sport']."' AND Player.Year=".$_GET['Year'];
 }
-//echo $sql;
 
 
 $result = $conn->query($sql);
